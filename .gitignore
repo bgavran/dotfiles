@@ -1,0 +1,23 @@
+# Ignore almost everything
+*
+!.gitignore
+!.vimrc
+!.zshrc
+!.zimrc
+
+!.Xmodmap
+!/.config/
+!/.i3/
+!.i3/**
+
+!/.vim/
+!/.vim/**
+
+!/.zim/
+!/.zim/**
+
+*.swp
+*.swo
+*.swn
+
+
