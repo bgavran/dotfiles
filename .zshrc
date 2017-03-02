@@ -86,3 +86,4 @@ alias ot="xdg-open"
 alias t="tyls"
 alias tl="tyls -a"
 alias bp='bpython'
+eval $(thefuck --alias)
