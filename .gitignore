@@ -7,13 +7,10 @@
 
 !.Xmodmap
 !/.i3/
-!/.i3/**
+!/.i3/*
 
 !/.vim/
-!/.vim/**
-
-!/.zim/
-!/.zim/**
+!/.vim/*
 
 *.swp
 *.swo
