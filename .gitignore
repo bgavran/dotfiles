@@ -6,9 +6,8 @@
 !.zimrc
 
 !.Xmodmap
-!/.config/
 !/.i3/
-!.i3/**
+!/.i3/**
 
 !/.vim/
 !/.vim/**
