@@ -78,6 +78,7 @@ source /etc/profile.d/autojump.zsh
 source "$HOME/build/alias-tips/alias-tips.plugin.zsh" # Reminding me every time I don't use an alias
 source "$HOME/build/archlinux-plugin-zsh/archlinux.plugin.zsh" # Useful archlinux aliases from omz
 source "$HOME/build/omz-git-aliases/git.aliases.zsh" # Useful git aliases from omz
+source "$HOME/build/omz-git-aliases/directories.zsh" # Useful directory aliases from omz
 
 export PATH="/opt/anaconda/bin:$PATH"
 export EDITOR="vim"
@@ -85,4 +86,7 @@ export EDITOR="vim"
 alias ot="xdg-open"
 alias t="tyls"
 alias tl="tyls -a"
-alias bp='bpython'
+alias bp="bpython"
+alias r="ranger"
+alias -g G="|grep --color -i"
+alias pls='sudo $(fc -ln -1)'

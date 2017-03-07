@@ -16,7 +16,8 @@ set $win Mod4
 # Remove window title
 # new_window 1pixel
 
-# bindsym $mod+Print exec --no-startup-id scrot ~/Pictures/%B_%d_%H:%M:%S.png
+# bindsym Print exec --no-startup-id scrot ~/Pictures/%B_%d_%H:%M:%S.png
+bindsym Print exec "scrot ~/Pictures/%B_%d_%H:%M:%S.png && notify-send 'Screenshot taken!' -t 3000 --icon=insert-image"
 
 # bindsym 96 exec --no-startup-id zsh -name scratchpad 
 
@@ -263,8 +264,8 @@ exec dropbox
 
 # Screen locking
 # Set the path to the lock screen script
-set $Locker ~/.i3/lock_screen.sh && sleep 1
-bindsym $win+l exec --no-startup-id $Locker
+set $Locker notify-send "Locking..." -t 1500 -i system-lock-screen && ~/.i3/lock_screen.sh && sleep 1
+bindsym $win+q exec --no-startup-id $Locker
 
 # bindsym $win+l exec --no-startup-id i3lock -i .i3/blue_background.png
 # bindsym $win+p exec --no-startup-id ~/prank/prank.sh -l
