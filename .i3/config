@@ -257,6 +257,7 @@ bindsym $win+d exec sudo connman_dmenu
 # exec --no-startup-id nitrogen --restore
 exec_always feh --bg-scale .i3/backgrounds/bg3.jpg
 exec --no-startup-id compton -f -i 0.95 --sw-opti
+exec xflux -l 45.8 -g 15.98
 exec google-chrome-stable
 exec connman-gtk
 exec dropbox
