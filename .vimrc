@@ -1,5 +1,9 @@
+execute pathogen#infect()
+
+filetype plugin indent on
+
 set number
-set paste
+" set paste
 syntax on
 
 let mapleader=","
