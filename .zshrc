@@ -81,6 +81,7 @@ source "$HOME/build/omz-git-aliases/git.aliases.zsh" # Useful git aliases from o
 source "$HOME/build/omz-git-aliases/directories.zsh" # Useful directory aliases from omz
 
 export PATH="/opt/anaconda/bin:$PATH"
+export PATH="/home/bgavran3/.gem/ruby/2.4.0/bin:$PATH"
 export EDITOR="vim"
 
 alias ot="xdg-open"
