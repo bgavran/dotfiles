@@ -14,8 +14,6 @@ set $mod Mod1
 set $rshift Mod3
 set $win Mod4
 
-bindsym $mod+i exec "notify-send 'modd'"
-
 # Remove window title
 # new_window 1pixel
 
@@ -279,11 +277,12 @@ bindsym $win+d exec sudo connman_dmenu
 # Startup applicatons
 # exec --no-startup-id nitrogen --restore
 exec_always feh --bg-scale .i3/backgrounds/bg3.jpg
-exec --no-startup-id compton -f -i 0.9 --sw-opti
+exec --no-startup-id compton -f -i 0.92 --sw-opti
 exec xflux -l 45.8 -g 15.98
 exec google-chrome-stable
 exec connman-gtk
 exec dropbox
+exec whatpulse
 exec slack
 
 
@@ -295,7 +294,7 @@ bindsym $win+q exec --no-startup-id $Locker
 # bindsym $win+l exec --no-startup-id i3lock -i .i3/blue_background.png
 # bindsym $win+p exec --no-startup-id ~/prank/prank.sh -l
 
-bindsym Ctrl+$mod+p exec --no-startup-id "i3-msg workspace 9 && vlc /home/bgavran3/Dropbox/ucenje/white_noise.mp3 && i3-msg move scratchpad"
+bindsym Ctrl+$mod+p exec --no-startup-id "i3-msg workspace 20 && vlc /home/bgavran3/Dropbox/ucenje/white_noise.mp3 && i3-msg move scratchpad"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
