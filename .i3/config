@@ -14,11 +14,33 @@ set $mod Mod1
 set $rshift Mod3
 set $win Mod4
 
+# Startup applicatons
+# exec --no-startup-id nitrogen --restore
+exec_always feh --bg-scale .i3/backgrounds/bg3.jpg
+exec --no-startup-id compton -f -i 0.92 --sw-opti
+exec_always --no-startup-id xflux -l 45.81 -g 15.98
+exec google-chrome-stable
+exec connman-gtk
+exec dropbox
+exec whatpulse
+exec slack
+exec_always ~/.i3/autoname_workspaces/i3-autoname-workspaces.py
+
+# start a terminal
+bindsym $mod+Return exec terminology
+bindsym $win+Return exec thunar
+
+# start chrome
+bindsym $rshift+c exec google-chrome-stable
+bindsym $rshift+s exec slack
+bindsym $rshift+p exec --no-startup-id "i3-msg workspace 20 && vlc /home/bgavran3/Dropbox/ucenje/white_noise.mp3"
+bindsym $rshift+l exec --no-startup-id $Locker  # $Locker is defined near the end
+
+bindsym Print exec "scrot ~/Pictures/%B_%d_%H:%M:%S.png && notify-send 'Screenshot taken!' -t 3000 --icon=insert-image"
+
+
 # Remove window title
 # new_window 1pixel
-
-# bindsym Print exec --no-startup-id scrot ~/Pictures/%B_%d_%H:%M:%S.png
-bindsym Print exec "scrot ~/Pictures/%B_%d_%H:%M:%S.png && notify-send 'Screenshot taken!' -t 3000 --icon=insert-image"
 
 # bindsym 96 exec --no-startup-id zsh -name scratchpad 
 
@@ -47,14 +69,6 @@ bindsym $mod+minus scratchpad show
 
 # Show the sup-mail scratchpad window, if any.
 bindsym mod4+s [title="^Sup ::"] scratchpad show
-
-# start a terminal
-bindsym $mod+Return exec terminology
-bindsym $win+Return exec thunar
-
-# start chrome
-bindsym Ctrl+$mod+m exec google-chrome-stable
-
 
 # kill focused window
 bindsym $mod+Ctrl+q kill
@@ -110,17 +124,6 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-
-# set $workspace1 "1 "
-# set $workspace2 "2 "
-# set $workspace3 "3 "
-# set $workspace4 "4 "
-# set $workspace5 "5 "
-# set $workspace6 "6 "
-# set $workspace7 "7 "
-# set $workspace8 "8 "
-# set $workspace9 "9 "
-# set $workspace10 "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
@@ -227,9 +230,6 @@ bindsym XF86AudioMute exec --no-startup-id  amixer sset Master toggle  # mute so
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-# Touchpad controls
-# bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
-
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
@@ -274,27 +274,12 @@ bindsym $mod+d exec rofi -show run -fullscreen -padding 300 -bw 0
 bindsym $win+d exec sudo connman_dmenu
 
 
-# Startup applicatons
-# exec --no-startup-id nitrogen --restore
-exec_always feh --bg-scale .i3/backgrounds/bg3.jpg
-exec --no-startup-id compton -f -i 0.92 --sw-opti
-exec xflux -l 45.8 -g 15.98
-exec google-chrome-stable
-exec connman-gtk
-exec dropbox
-exec whatpulse
-exec slack
-
-
 # Screen locking
 # Set the path to the lock screen script
-set $Locker notify-send "Locking..." -t 1500 -i system-lock-screen && ~/.i3/lock_screen.sh && sleep 1
-bindsym $win+q exec --no-startup-id $Locker
+set $Locker notify-send "Locking..." -t 1000 -i system-lock-screen && ~/.i3/lock_screen.sh && sleep 1
 
-# bindsym $win+l exec --no-startup-id i3lock -i .i3/blue_background.png
 # bindsym $win+p exec --no-startup-id ~/prank/prank.sh -l
 
-bindsym Ctrl+$mod+p exec --no-startup-id "i3-msg workspace 20 && vlc /home/bgavran3/Dropbox/ucenje/white_noise.mp3 && i3-msg move scratchpad"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
