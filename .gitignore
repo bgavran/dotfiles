@@ -12,6 +12,9 @@
 !/.vim/
 !/.vim/*
 
+!/.zim/
+!/.zim/*
+
 *.swp
 *.swo
 *.swn

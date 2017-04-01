@@ -26,6 +26,8 @@ exec whatpulse
 exec slack
 exec_always ~/.i3/autoname_workspaces/i3-autoname-workspaces.py
 
+assign [class="Slack"] 19
+
 # start a terminal
 bindsym $mod+Return exec terminology
 bindsym $win+Return exec thunar
