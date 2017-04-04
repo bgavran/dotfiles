@@ -13,9 +13,6 @@
 
 !/.vim/
 !/.vim/*
-
-*.swp
-*.swo
-*.swn
-
+!/.vim/colors
+!/.vim/colors/*
 

@@ -47,4 +47,3 @@ fi
 exec i3
 numlockx & # Enables numlock on startup
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap # Starts up custom modifier keys
-syndaemon -i 0.5 -K -R # Disables touchpad 0.5 seconds after typing

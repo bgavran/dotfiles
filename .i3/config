@@ -25,6 +25,7 @@ exec dropbox
 exec whatpulse
 exec slack
 exec_always ~/.i3/autoname_workspaces/i3-autoname-workspaces.py
+exec --no-startup-id syndaemon -i 0.5 -d -K -R # Disables touchpad 0.5 seconds after typing
 
 assign [class="Slack"] 19
 

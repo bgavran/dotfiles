@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/bgavran3/dotfiles/.vim'
 let g:netrw_dirhist_2='/usr/share/slim/themes/minimal'
 let g:netrw_dirhist_3='/home/bgavran3/.zim'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/etc/apm'
 let g:netrw_dirhist_6='/etc/systemd/system'
 let g:netrw_dirhist_7='/etc/systemd/system/multi-user.target.wants'
 let g:netrw_dirhist_8='/home/bgavran3/.ssh'
+let g:netrw_dirhist_9='/home/bgavran3/.vim/bundle'
