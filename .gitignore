@@ -1,5 +1,7 @@
 # Ignore almost everything
 *
+!.tmux.conf
+!.xinitrc
 !.gitignore
 !.vimrc
 !.zshrc
@@ -11,9 +13,6 @@
 
 !/.vim/
 !/.vim/*
-
-!/.zim/
-!/.zim/*
 
 *.swp
 *.swo

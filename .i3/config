@@ -211,7 +211,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 # Bar
   bar {
-	font pango:  FontAwesome 8
+	font pango:  FontAwesome 9
     	status_command i3blocks -c ~/.i3/i3blocks.conf
     	position top
  # 	colors {

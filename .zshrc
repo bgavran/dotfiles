@@ -17,6 +17,7 @@ POWERLEVEL9K_SHORTEN_STRATEGY="Default"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 
 export KEYTIMEOUT=1
+export TERM="xterm-256color"
 
 # Fix for the oh-my-zsh broken vi mode
 function zle-line-init {
