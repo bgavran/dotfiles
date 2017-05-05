@@ -15,5 +15,5 @@
 !/.vim/*
 !/.vim/colors
 !/.vim/colors/*
-!/.vim/autoload
-!/.vim/autoload/*
+# !/.vim/autoload
+# !/.vim/autoload/*

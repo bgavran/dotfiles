@@ -94,3 +94,6 @@ alias bp="bpython"
 alias r="ranger"
 alias -g G="|grep --color -i"
 alias pls='sudo $(fc -ln -1)'
+
+
+. /home/bgavran3/build/torch/install/bin/torch-activate
