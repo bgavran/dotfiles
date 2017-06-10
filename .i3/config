@@ -21,7 +21,7 @@ exec --no-startup-id compton -f -i 0.92 --sw-opti
 exec_always --no-startup-id xflux -l 45.81 -g 15.98
 exec google-chrome-stable
 exec connman-gtk
-exec dropbox
+# exec dropbox
 exec whatpulse
 exec slack
 exec_always ~/.i3/autoname_workspaces/i3-autoname-workspaces.py

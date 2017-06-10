@@ -91,9 +91,10 @@ alias ot="xdg-open"
 alias t="tyls"
 alias tl="tyls -a"
 alias bp="bpython"
+alias ptp="ptpython"
 alias r="ranger"
 alias -g G="|grep --color -i"
 alias pls='sudo $(fc -ln -1)'
-
+alias rm="echo This is not the command you\'re looking for."
 
 . /home/bgavran3/build/torch/install/bin/torch-activate
