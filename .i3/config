@@ -39,7 +39,8 @@ bindsym $rshift+s exec slack
 bindsym $rshift+p exec --no-startup-id "i3-msg workspace number 20 && vlc /home/bgavran3/Dropbox/ucenje/white_noise.mp3"
 bindsym $rshift+l exec --no-startup-id $Locker  # $Locker is defined near the end
 
-bindsym Print exec "scrot ~/Pictures/%B_%d_%H:%M:%S.png && notify-send 'Screenshot taken!' -t 3000 --icon=insert-image"
+# bindsym Print exec "scrot ~/Pictures/%B_%d_%H:%M:%S.png && notify-send 'Screenshot taken!' -t 3000 --icon=insert-image"
+bindsym Print exec spectacle
 
 
 bindsym $rshift+j workspace prev
