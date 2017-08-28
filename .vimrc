@@ -14,6 +14,8 @@ set laststatus=2
 
 let mapleader=","
 
+set linebreak
+
 " Setting keybindings for pasting to linux clipboard
 noremap <Leader>y "+y
 noremap <Leader>p "+p
