@@ -17,12 +17,11 @@ set $win Mod4
 # Startup applicatons
 # exec --no-startup-id nitrogen --restore
 exec_always feh --bg-scale .i3/backgrounds/bg3.jpg
-exec --no-startup-id compton -f -i 0.92 --sw-opti
-exec_always --no-startup-id xflux -l 45.81 -g 15.98
+# exec --no-startup-id compton -f -i 0.92 --sw-opti
+exec --no-startup-id xflux -l 45.81 -g 15.98
 exec google-chrome-stable
 exec connman-gtk
 # exec dropbox
-exec whatpulse
 exec slack
 exec_always ~/.i3/autoname_workspaces/i3-autoname-workspaces.py
 exec --no-startup-id syndaemon -i 0.5 -d -K -R # Disables touchpad 0.5 seconds after typing
@@ -49,7 +48,7 @@ bindsym $win+$mod+h move workspace to output left
 bindsym $win+$mod+l move workspace to output right
 
 # Remove window title
-# new_window 1pixel
+# new_window pixel
 
 # bindsym 96 exec --no-startup-id zsh -name scratchpad 
 
@@ -77,7 +76,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Show the sup-mail scratchpad window, if any.
-bindsym mod4+s [title="^Sup ::"] scratchpad show
+bindsym $win+s [title="^Sup ::"] scratchpad show
 
 # kill focused window
 bindsym $mod+Ctrl+q kill
@@ -92,6 +91,11 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
+bindsym $win+h focus left
+bindsym $win+j focus down
+bindsym $win+k focus up
+bindsym $win+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -145,16 +149,16 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
-bindsym $rshift+1 workspace number 11
-bindsym $rshift+2 workspace number 12
-bindsym $rshift+3 workspace number 13
-bindsym $rshift+4 workspace number 14
-bindsym $rshift+5 workspace number 15
-bindsym $rshift+6 workspace number 16
-bindsym $rshift+7 workspace number 17
-bindsym $rshift+8 workspace number 18
-bindsym $rshift+9 workspace number 19
-bindsym $rshift+0 workspace number 20
+bindsym $win+1 workspace number 11
+bindsym $win+2 workspace number 12
+bindsym $win+3 workspace number 13
+bindsym $win+4 workspace number 14
+bindsym $win+5 workspace number 15
+bindsym $win+6 workspace number 16
+bindsym $win+7 workspace number 17
+bindsym $win+8 workspace number 18
+bindsym $win+9 workspace number 19
+bindsym $win+0 workspace number 20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -167,16 +171,16 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
-bindsym $rshift+Shift+1 move container to workspace number 11
-bindsym $rshift+Shift+2 move container to workspace number 12
-bindsym $rshift+Shift+3 move container to workspace number 13
-bindsym $rshift+Shift+4 move container to workspace number 14
-bindsym $rshift+Shift+5 move container to workspace number 15
-bindsym $rshift+Shift+6 move container to workspace number 16
-bindsym $rshift+Shift+7 move container to workspace number 17
-bindsym $rshift+Shift+8 move container to workspace number 18
-bindsym $rshift+Shift+9 move container to workspace number 19
-bindsym $rshift+Shift+0 move container to workspace number 20
+bindsym $win+Shift+1 move container to workspace number 11
+bindsym $win+Shift+2 move container to workspace number 12
+bindsym $win+Shift+3 move container to workspace number 13
+bindsym $win+Shift+4 move container to workspace number 14
+bindsym $win+Shift+5 move container to workspace number 15
+bindsym $win+Shift+6 move container to workspace number 16
+bindsym $win+Shift+7 move container to workspace number 17
+bindsym $win+Shift+8 move container to workspace number 18
+bindsym $win+Shift+9 move container to workspace number 19
+bindsym $win+Shift+0 move container to workspace number 20
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -246,7 +250,7 @@ for_window [class="I3-exit"] floating enable border normal
 
 # Colors
 
-set $bg-color 	         #2f343f
+set $bg-color 	         #332041
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
@@ -261,7 +265,7 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
 client.background	$bg-color
 
-hide_edge_borders both
+hide_edge_borders smart
 
 
 # start rofi (a program launcher) 
