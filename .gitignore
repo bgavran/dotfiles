@@ -1,5 +1,6 @@
 # Ignore almost everything
 *
+
 !.tmux.conf
 !.xinitrc
 !.gitignore
@@ -7,8 +8,10 @@
 !.zshrc
 !.zimrc
 
-!./config/polybar/
-!./config/polybar/*
+!/.config/
+
+!/.config/polybar/
+!/.config/polybar/*
 
 !.Xmodmap
 !/.i3/
