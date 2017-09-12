@@ -215,22 +215,25 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# Bar
-  bar {
-	font pango:  FontAwesome 9
-    	status_command i3blocks -c ~/.i3/i3blocks.conf
-    	position top
- # 	colors {
- # 		background $bg-color
- # 	    	separator 757575
- # 		#                  border             background         text
- # 		focused_workspace  $bg-color          $bg-color          $text-color
- # 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
- # 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
- # 	}
-  }
+# Start i3bar to display a workspace bar (plus the system information i3status # finds out, if available)
+# bar {
+# font pango:  FontAwesome 9
+# status_command i3blocks -c ~/.i3/i3blocks.conf
+# position top
+#  # 	colors {
+#  # 		background $bg-color
+#  # 	    	separator 757575
+#  # 		#                  border             background         text
+#  # 		focused_workspace  $bg-color          $bg-color          $text-color
+#  # 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#  # 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#  # 	}
+# }
+
+bar {
+    i3bar_command $HOME/.config/polybar/launch.sh
+}
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c1 sset Master 5+ #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c1 sset Master 5- #decrease sound volume

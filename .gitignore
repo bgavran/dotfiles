@@ -7,6 +7,9 @@
 !.zshrc
 !.zimrc
 
+!./config/polybar/
+!./config/polybar/*
+
 !.Xmodmap
 !/.i3/
 !/.i3/*
