@@ -17,6 +17,7 @@ set $win Mod4
 # Startup applicatons
 # exec --no-startup-id nitrogen --restore
 exec_always feh --bg-scale .i3/backgrounds/bg3.jpg
+# exec_always feh --bg-scale .i3/backgrounds/fire.png
 exec --no-startup-id compton -f 
 exec --no-startup-id xflux -l 45.81 -g 15.98
 exec google-chrome-stable
@@ -48,7 +49,7 @@ bindsym $win+$mod+h move workspace to output left
 bindsym $win+$mod+l move workspace to output right
 
 # Remove window title
-# new_window pixel
+new_window pixel
 
 # bindsym 96 exec --no-startup-id zsh -name scratchpad 
 
@@ -215,21 +216,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status # finds out, if available)
-# bar {
-# font pango:  FontAwesome 9
-# status_command i3blocks -c ~/.i3/i3blocks.conf
-# position top
-#  # 	colors {
-#  # 		background $bg-color
-#  # 	    	separator 757575
-#  # 		#                  border             background         text
-#  # 		focused_workspace  $bg-color          $bg-color          $text-color
-#  # 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-#  # 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-#  # 	}
-# }
-
+# Polybar
 bar {
     i3bar_command $HOME/.config/polybar/launch.sh
 }
@@ -273,7 +260,7 @@ hide_edge_borders smart
 
 # start rofi (a program launcher) 
 # color config is in ~/.config/rofi/config
-bindsym $mod+d exec rofi -show run -fullscreen -padding 300 -bw 0
+bindsym $mod+d exec rofi -show run -fullscreen -padding 300 #-bw 0
 bindsym $win+d exec sudo connman_dmenu
 
 
