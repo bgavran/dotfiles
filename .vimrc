@@ -2,6 +2,9 @@ execute pathogen#infect()
 
 filetype plugin indent on
 
+set encoding=utf-8  " The encoding displayed.
+set fileencoding=utf-8  " The encoding written to file.
+
 syntax enable
 colorscheme base
 
