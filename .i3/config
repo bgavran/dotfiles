@@ -24,7 +24,7 @@ exec google-chrome-stable
 exec connman-gtk
 # exec dropbox
 exec slack
-exec_always ~/.i3/autoname_workspaces/i3-autoname-workspaces.py
+# exec_always ~/.i3/autoname_workspaces/i3-autoname-workspaces.py
 exec --no-startup-id syndaemon -i 0.5 -d -K -R # Disables touchpad 0.5 seconds after typing
 
 assign [class="Slack"] 19
@@ -43,8 +43,8 @@ bindsym $rshift+l exec --no-startup-id $Locker  # $Locker is defined near the en
 bindsym Print exec spectacle
 
 
-bindsym $rshift+j workspace prev
-bindsym $rshift+k workspace next
+bindsym $rshift+k workspace prev
+bindsym $rshift+j workspace next
 bindsym $win+$mod+h move workspace to output left
 bindsym $win+$mod+l move workspace to output right
 
@@ -268,23 +268,10 @@ bindsym $win+d exec sudo connman_dmenu
 
 # Screen locking
 # Set the path to the lock screen script
-set $Locker notify-send "Locking..." -t 1000 -i system-lock-screen && ~/.i3/lock_screen.sh && sleep 1
+set $Locker ~/.i3/lock_screen.sh
 
 # bindsym $win+p exec --no-startup-id ~/prank/prank.sh -l
 
-
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+Escape mode "$mode_system"
+# Powermenu
+for_window [class="oblogout"] floating enable
+bindsym $mod+Escape exec oblogout --class oblogout
