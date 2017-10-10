@@ -1,6 +1,8 @@
 # Ignore almost everything
 *
 
+!README.md
+
 !.tmux.conf
 !.xinitrc
 !.gitignore
