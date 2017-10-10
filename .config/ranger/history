@@ -1,0 +1,30 @@
+?
+search Drop
+search .vi
+search dotfiles
+Q
+cd  :q
+q
+search help
+find e
+find er
+search drop
+shell S
+new colorschemes
+help
+mkdir colorschemes
+set colorscheme
+open_with ang
+search range
+search 
+search .config
+set colorscheme rawine
+set colorscheme rangy
+set colorscheme jungle
+set colorscheme default
+set colorscheme snow
+open_with 
+search ranger
+set colorscheme solarized
+search \.config
+search rang
