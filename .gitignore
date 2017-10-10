@@ -13,6 +13,10 @@
 !/.config/polybar/
 !/.config/polybar/*
 
+!/.config/ranger/
+!/.config/ranger/*
+!/.config/ranger/colorschemes/*
+
 !.Xmodmap
 !/.i3/
 !/.i3/*
