@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+sleep 0.1
+
+notify-send "Locking..." -t 1000 -i system-lock-screen
+
 icon="$HOME/.i3/icons/lock_icon.png"
 tmpbg='/tmp/screen.png'
 
@@ -14,3 +18,5 @@ convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
 
 
 i3lock -e -f -i "$tmpbg"
+
+sleep 1
