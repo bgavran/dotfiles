@@ -19,6 +19,9 @@ let mapleader=","
 
 set linebreak
 
+" Sets scrollwheel to scroll the screen, not move the cursor
+set mouse=a
+
 " Setting keybindings for pasting to linux clipboard
 noremap <Leader>y "+y
 noremap <Leader>p "+p
