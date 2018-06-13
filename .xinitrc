@@ -22,11 +22,6 @@ if [ -f "$userresources" ]; then
 fi
 
 
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-fi
-
-
 # start some nice programs
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
@@ -36,14 +31,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# Added by bgavran
+numlockx # Toggle numlock on
+setxkbmap -option caps:swapescape # Swap Caps lock and Escape
 
-# twm &
-# xclock -geometry 50x50-1+1 &
-# xterm -geometry 80x50+494+51 &
-# xterm -geometry 80x20+494-0 &
-# exec xterm -geometry 80x66+0+0 -name login
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
 
-# Added by bgavran3
 exec i3
-numlockx & # Enables numlock on startup
-[ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap # Starts up custom modifier keys
+# exec terminator --geometry 1366x768
