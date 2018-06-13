@@ -6,19 +6,36 @@ set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
 
 syntax enable
-colorscheme torte
+
+" Always display the status bar (makes vim-lightline work)
+set laststatus=2
+
+" lightline colorcheme
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ }
+
+let g:solarized_use16=1
+set background=dark
+colorscheme solarized8_flat
 
 set relativenumber
 set number
 
 set ignorecase
 set smartcase
-" Always display the status bar (makes vim-airline work)
-set laststatus=2
 
 let mapleader=","
 
 set linebreak
+
+set autoindent
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 " Sets scrollwheel to scroll the screen, not move the cursor
 set mouse=a
@@ -47,10 +64,10 @@ noremap <Leader>p "+p
         redraw
     endfunction
 
-vmap  <expr>  <LEFT>   DVB_Drag('left')                      
-vmap  <expr>  <RIGHT>  DVB_Drag('right')                     
-vmap  <expr>  <DOWN>   DVB_Drag('down')                      
-vmap  <expr>  <UP>     DVB_Drag('up')                        
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
 vmap  <expr>  D        DVB_Duplicate()                       
                                                              
 " Remove any introduced trailing whitespace after moving...  
@@ -67,11 +84,6 @@ let g:haskell_backpack = 1                " to enable highlighting of backpack k
 
 " indentLine indent character
 let g:indentLine_char = '⎸'
-
-" lightline colorcheme
-let g:lightline = {
-      \ 'colorscheme': 'Dracula',
-      \ }
 
 " Set longer vim history size
 if &history < 1000
@@ -95,3 +107,21 @@ let g:haskell_indent_disable = 1
 " let g:haskell_indent_in = 2
 " let g:haskell_indent_guard = 2
 
+" Linting
+let g:ale_set_quickfix = 0
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+
+" Set this setting in vimrc if you want to fix files automatically on save.
+" This is off by default.
+let g:ale_fix_on_save = 1
+
+" Hightlight current position
+set cursorline
+set cursorcolumn 
+hi CursorLine cterm=NONE ctermbg=0
+
+" NERDTree - open a file in new tab by default 
+let NERDTreeMapOpenInTab='<ENTER>'
+
+" Keep cursor in the middle while scrolling
+set scrolloff=10
