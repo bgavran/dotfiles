@@ -49,7 +49,7 @@ font-2 = siji:pixelsize=10;1
 ###################################################################################
 modules-left = xwindow powermenu 
 modules-center = i3 
-modules-right = xbacklight volume wlan eth battery date
+modules-right = redshift xbacklight volume wlan eth battery date
 ###################################################################################
 
 tray-position = right
@@ -174,7 +174,7 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = 
+label =
 
 bar-width = 5
 bar-indicator = |
@@ -219,7 +219,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #04e810
-label-connected = %essid%
+label-connected = %essid:0:12:...%
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = #e50d0d
@@ -375,6 +375,12 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/redshift]
+type = custom/script
+interval = 5
+
+exec = ~/.config/polybar/redshift.sh
 
 ###################################################################################
 [settings]
