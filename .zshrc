@@ -84,7 +84,8 @@ source "$HOME/build/omz-git-aliases/git.aliases.zsh" # Useful git aliases from o
 source "$HOME/build/omz-git-aliases/directories.zsh" # Useful directory aliases from omz
 
 export PATH="/opt/anaconda/bin:$PATH"
-export PATH="/home/bgavran3/.gem/ruby/2.4.0/bin:$PATH"
+export PATH="/home/bgavran3/.gem/ruby/2.5.0/bin:$PATH"
+export PATH="/home/bgavran3/.local/bin:$PATH"
 export EDITOR="vim"
 
 alias ot="xdg-open"
@@ -96,5 +97,6 @@ alias r="ranger"
 alias -g G="|grep --color -i"
 alias pls='sudo $(fc -ln -1)'
 alias rm="echo This is not the command you\'re looking for."
+alias pacupg="echo Don\'t update too often!!"
 
 . /home/bgavran3/build/torch/install/bin/torch-activate
