@@ -25,7 +25,6 @@ smart_gaps on
 gaps inner 4
 
 
-# start a terminal
 bindsym $mod+Return exec --no-startup-id $Terminal
 bindsym $win+Return exec --no-startup-id $Terminal -e "source .zshrc && ranger"  # .zshrc sets the default editor and it's not sourced if I just start ranger
 
@@ -38,6 +37,9 @@ bindsym $rshift+t exec thunar
 bindsym $rshift+l exec --no-startup-id betterlockscreen -l blur
 bindsym $rshift+s exec --no-startup-id betterlockscreen -s blur # doesn't seem to work!
 
+# Powermenu
+for_window [class="oblogout"] floating enable move right 0,move up 15px # for some reason it spawns with an offset so I correct it here
+bindsym $mod+Escape exec oblogout --class oblogout
 
 # kill focused window
 bindsym $mod+q kill
