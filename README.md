@@ -14,10 +14,10 @@ This is a collection of configuration files for my system.
 #### Shell:
 * zsh
 
-#### Text editor
+#### Text editor:
 * neovim
 
-#### File manager
+#### File manager:
 * **CLI**: ranger
 * **GUI**: thunar
 
