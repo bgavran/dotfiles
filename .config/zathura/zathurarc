@@ -1,0 +1,4 @@
+set selection-clipboard clipboard
+map <Left> navigate previous
+map <Right> navigate next
+set smooth-scroll true

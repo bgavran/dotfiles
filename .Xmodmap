@@ -1,0 +1,3 @@
+clear Shift
+add mod3 = Shift_R
+add Shift = Shift_L
