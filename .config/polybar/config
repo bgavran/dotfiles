@@ -83,7 +83,7 @@ cursor-scroll = ns-resize
 
 modules-left = i3
 modules-center = xwindow
-modules-right = backlight-acpi volume cpuinfo wlan eth avg-battery battery date powermenu
+modules-right = backlight-acpi volume cpuinfo temperature wlan eth avg-battery battery date
 
 [module/cpuinfo]
 type =                      custom/script
@@ -95,7 +95,7 @@ label =                     " %output%"
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:60:...%
+label = %title:0:30:...%
 
 [module/bspwm]
 type = internal/bspwm
@@ -157,7 +157,7 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = 
 
 bar-width = 4
 bar-indicator = |
@@ -198,7 +198,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %essid:0:9:...%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -206,11 +206,11 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
+ramp-signal-0 = 
 ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -231,13 +231,13 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
 date = "%b %d"
 date-alt = "%a, %d.%m.%Y"
 
 time = ", %H:%M"
-time-alt = %H:%M:%S
+time-alt = , %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
@@ -249,7 +249,7 @@ label = %date%%time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = 
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
@@ -275,13 +275,13 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/avg-battery]
 type = custom/script
-exec = "count=$(acpi -b | wc -l); sum=$(acpi -b | egrep -o '[0-9]{1,3}%' | tr -d '%' | xargs -I% echo -n '+%'); echo $(( sum / count ))%" 
+exec = "echo $(/usr/local/bin/battery_status.sh)%"
 interval = 5
 format-underline = #ffb52a
 
 [module/battery]
 type = internal/battery
-battery = BAT1
+battery = BAT0
 adapter = AC
 full-at = 98
 
@@ -307,10 +307,11 @@ animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
+interval = 2
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
+format = <label>
 format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
@@ -323,35 +324,6 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true

@@ -9,6 +9,8 @@ set $Terminal terminology
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id betterlockscreen -w
 exec --no-startup-id nm-applet
+exec --no-startup-id emacs --daemon=irc
+exec --no-startup-id emacs --daemon=misc
 #exec --no-startup-id compton -b --no-fading-openclose = true
 #exec --no-startup-id redshift-gtk
 
@@ -31,11 +33,11 @@ bindsym $win+Return exec --no-startup-id $Terminal -e "source .zshrc && ranger" 
 bindsym Print exec spectacle
 
 bindsym $rshift+c exec google-chrome-stable
+bindsym $rshift+n exec google-chrome-stable --incognito
 bindsym $rshift+f exec firefox
 
 bindsym $rshift+t exec thunar
 bindsym $rshift+l exec --no-startup-id betterlockscreen -l blur
-bindsym $rshift+s exec --no-startup-id betterlockscreen -s blur # doesn't seem to work!
 
 # Powermenu
 for_window [class="oblogout"] floating enable move right 0,move up 15px # for some reason it spawns with an offset so I correct it here
