@@ -30,7 +30,7 @@ xset b off # turn off the system speaker
 setxkbmap -option caps:swapescape
 setxkbmap hr
 
-xmodmap "$usermodmap" # load the remapping of caps/escape and addition of the right shift as a different modifier key
+xmodmap "$usermodmap" # load the remapping of right shift as a different modifier key
 
 udiskie &
 
