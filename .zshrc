@@ -26,8 +26,11 @@ HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa old_ssh/id_rsa
 plugins=(
-  git cabal colored-man-pages vi-mode
+  git cabal colored-man-pages vi-mode ssh-agent
 )
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh

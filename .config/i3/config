@@ -9,9 +9,8 @@ set $Terminal terminology
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id betterlockscreen -w
 exec --no-startup-id nm-applet
-exec --no-startup-id emacs --daemon=irc
 exec --no-startup-id emacs --daemon=misc
-#exec --no-startup-id compton -b --no-fading-openclose = true
+#exec --no-startup-id compton -b --no-fading-openclose
 #exec --no-startup-id redshift-gtk
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -50,6 +49,7 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run -lines 6 -width 40 -yoffset -100 -padding 0 -hide-scrollbar -eh 2 -bw 5 -font "System San Francisco Display 12"
+bindsym $mod+w exec rofi -show window -lines 6 -width 40 -yoffset -100 -padding 0 -hide-scrollbar -eh 2 -bw 5 -font "System San Francisco Display 12"
 
 # change focus
 bindsym $mod+h focus left
@@ -83,8 +83,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -185,8 +185,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 
 # Set multimedia keys
-bindsym XF86MonBrightnessUp exec xbacklight -inc 2
-bindsym XF86MonBrightnessDown exec xbacklight -dec 2
+bindsym XF86MonBrightnessUp exec brightness.sh up
+bindsym XF86MonBrightnessDown exec brightness.sh down
 
 #bindsym XF86AudioRaiseVolume exec "libnotify-send lol"
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 2%+ unmute"
